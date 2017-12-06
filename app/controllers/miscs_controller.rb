@@ -1,0 +1,2 @@
+class MiscsController < ApplicationController
+end
