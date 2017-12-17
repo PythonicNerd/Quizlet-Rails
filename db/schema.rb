@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206030450) do
+ActiveRecord::Schema.define(version: 20171207000209) do
 
   create_table "flashcard_sets", force: :cascade do |t|
     t.string "name"
     t.text "desc"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_flashcard_sets_on_user_id"
   end
 
   create_table "flashcards", force: :cascade do |t|
@@ -26,6 +28,11 @@ ActiveRecord::Schema.define(version: 20171206030450) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["flascard_set_id"], name: "index_flashcards_on_flascard_set_id"
+  end
+
+  create_table "public_sets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

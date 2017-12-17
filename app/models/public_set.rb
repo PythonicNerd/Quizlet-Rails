@@ -1,0 +1,2 @@
+class PublicSet < ApplicationRecord
+end
