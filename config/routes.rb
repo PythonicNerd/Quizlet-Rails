@@ -12,5 +12,9 @@ Rails.application.routes.draw do
 
   post 'creates/add_new_flashcard_ajax' => 'creates#add_new_flashcard_ajax'
 
+  get 'creates/update_flashcards' => 'creates#update_flashcards'
+
+  get 'creates/update_title' => 'creates#update_title'
+
 
 end
